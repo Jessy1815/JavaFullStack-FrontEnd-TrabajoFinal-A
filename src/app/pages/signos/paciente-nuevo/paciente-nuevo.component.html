@@ -1,0 +1,24 @@
+<mat-card>Nuevo Paciente</mat-card>
+<form class="example-container" [formGroup]="form"  #pacForm="ngForm">
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Nombres" required formControlName="nombres">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Apellidos" required formControlName="apellidos">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="DNI" required formControlName="dni" max="8" maxlength="8" type="number">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Teléfono" required formControlName="telefono">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Dirección" required formControlName="direccion">
+        </mat-form-field>
+
+    </div>
+</form>
+
+<button mat-raised-button color="primary" (click)="operar()" [disabled]="pacForm.invalid">Aceptar</button>
+<button mat-raised-button color="accent" (click)="cancelar()">Cancelar</button>

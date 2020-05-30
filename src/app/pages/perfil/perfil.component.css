@@ -1,0 +1,22 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin-left: 30px;
+  }
+  
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+  }
+  
+  .div {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .mat-list   {
+    overflow: auto;
+    max-height: 500px;
+  }
+  

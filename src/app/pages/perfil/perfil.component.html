@@ -1,0 +1,21 @@
+<mat-toolbar>Perfil</mat-toolbar>
+
+<div class="example-container ">
+
+    <div>
+        <h3>Usuario:</h3>
+        <label> {{ usuario }}</label>
+    </div>
+    <br>
+    <div>
+        <h3>Rol: </h3>
+        <mat-list role="list" *ngFor="let r of rol">
+            <mat-list-item role="listitem">{{r}}</mat-list-item>
+        </mat-list>
+    </div>
+    
+
+
+</div>
+
+

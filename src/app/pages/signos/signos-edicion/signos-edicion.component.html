@@ -1,0 +1,53 @@
+<form class="example-container" [formGroup]="form"  #sigForm="ngForm">
+
+    <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field>
+    </div>
+
+    <mat-form-field>
+        <mat-select placeholder="Selecciona paciente" [(value)]="idPacienteSeleccionado">
+            <mat-option *ngFor="let p of pacientes" [value]="p.idPaciente">
+                {{ p.nombres }} {{ p.apellidos }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <div class="example-button-row">
+        <button mat-raised-button color="accent" (click)="abrirDialogo()">Nuevo Paciente</button>
+    </div>
+
+    <br>
+     
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Escoge una fecha" [max]="maxFecha"
+            formControlName="fecha" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Temperatura" required formControlName="temperatura">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Pulso" required formControlName="pulso">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Ritmo Respiratorio" required formControlName="ritmo">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="operar()" [disabled]="sigForm.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" routerLink='/signos' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+</form>
+
+<br />
